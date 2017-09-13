@@ -1,0 +1,17 @@
+version: '3.0'
+volumes:
+  node_modules:
+
+services:
+  app:
+    image: node:6.11-alpine
+    command: yarn start
+    working_dir: '/app'
+    environment:
+      HOST: '0.0.0.0'
+      PORT: '8080'
+    volumes:
+      - './:/app/'
+      - node_modules:/app/node_modules/
+    ports:
+      - '8080:8080'
