@@ -1,9 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
-import promiseMiddleware from 'redux-promise-middleware';
 import rootReducer from './ducks';
 
-const middleware = [promiseMiddleware()];
+const middleware = [];
 
 if (process.env.NODE_ENV !== 'production') {
   const logger = createLogger({ collapsed: true, logger: console });
